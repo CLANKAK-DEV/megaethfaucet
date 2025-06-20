@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaETH Faucet - Free MEGA Tokens</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+</head>
+<body>
+    <script src="script.js"></script>
+    
+    <div class="faucet-card">
+        <h1 class="logo">💧 MegaETH Faucet</h1>
+        <p class="subtitle">Get free MEGA tokens for testing on MegaETH Testnet</p>
+        
+        <div class="faucet-info">
+            <div class="stat-value" id="faucetAmount">0.005</div>
+            <div class="stat-label">MEGA per claim</div>
+            <div class="cooldown-notice">
+                ⏰ You can claim once every 24 hours per wallet address
+            </div>
+        </div>
+
+        <div class="input-group">
+            <input
+                type="text"
+                class="wallet-input"
+                id="walletAddress"
+                placeholder="Enter your EVM wallet address (0x...)"
+            >
+        </div>
+
+        <button class="claim-btn" id="claimBtn">Claim 0.005 MEGA Tokens</button>
+        <button class="completed-btn" id="completedBtn">Completed</button>
+
+        <div class="countdown-timer" id="countdownTimer">
+            <div class="countdown-text">Next claim available in:</div>
+            <div class="countdown-display" id="countdownDisplay">--:--:--</div>
+        </div>
+
+        <div class="success-message" id="successMessage"></div>
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <!-- Task Modal -->
+    <div class="task-modal" id="taskModal">
+        <div class="task-content">
+            <div class="task-title">🎯 Complete These Tasks</div>
+            <p class="task-description">Please complete all tasks below to claim your MEGA tokens:</p>
+            
+            <div class="task-list">
+                <div class="task-item">
+                    <div class="task-icon">👥</div>
+                    <div class="task-text">
+                        <strong>Follow @Clankak</strong><br>
+                        <a href="https://x.com/Clankak" target="_blank" class="task-link">Click here to follow →</a>
+                    </div>
+                </div>
+                <div class="task-item">
+                    <div class="task-icon">👥</div>
+                    <div class="task-text">
+                        <strong>Follow @MegaETH_Labs</strong><br>
+                        <a href="https://x.com/megaeth_labs" target="_blank" class="task-link">Click here to follow →</a>
+                    </div>
+                </div>
+                
+                <div class="task-item">
+                    <div class="task-icon">❤️</div>
+                    <div class="task-text">
+                        <strong>Like our latest post</strong><br>
+                        <a href="https://x.com/Clankak" target="_blank" class="task-link">Go to profile and like →</a>
+                    </div>
+                </div>
+                
+                <div class="task-item">
+                    <div class="task-icon">🔄</div>
+                    <div class="task-text">
+                        <strong>Retweet our latest post</strong><br>
+                        <a href="https://x.com/Clankak" target="_blank" class="task-link">Go to profile and retweet →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                ⚠️ <strong>Important:</strong> Complete all tasks then click "I Completed All Tasks" to receive your tokens!
+            </div>
+
+            <div class="modal-buttons">
+                <button class="close-btn" onclick="closeTaskModal()">Close</button>
+                <button class="complete-btn" onclick="completeAllTasks()">I Completed All Tasks</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>MegaETH Testnet Faucet | Network: Chain ID 6342 | RPC: carrot.megaeth.com</p>
+        <p>Need help? Visit <a href="https://megaeth.com" target="_blank">megaeth.com</a></p>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+
+</body>
+</html>

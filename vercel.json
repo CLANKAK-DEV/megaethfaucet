@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/sendTokens.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
