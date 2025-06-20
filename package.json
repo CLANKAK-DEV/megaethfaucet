@@ -1,7 +1,6 @@
 {
   "name": "finalmegaeth",
   "version": "1.0.0",
-  "description": "",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "web3": "^4.16.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CLANKAK-DEV/megaethfaucet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CLANKAK-DEV/megaethfaucet/issues"
+  },
+  "homepage": "https://github.com/CLANKAK-DEV/megaethfaucet#readme",
+  "description": ""
 }
