@@ -130,7 +130,7 @@ async function checkFaucetBalance() {
     }
 }
 
-async function sendTokensAutomatically() {
+  async function sendTokensAutomatically() {
     const completedBtn = document.getElementById('completedBtn');
     completedBtn.disabled = true;
     completedBtn.textContent = 'Sending tokens...';
@@ -141,6 +141,12 @@ async function sendTokensAutomatically() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ toAddress: userWallet })
         });
+
+        if (!response.ok) {
+            // Try to read error message as text for debugging
+            const errorText = await response.text();
+            throw new Error(`Server error ${response.status}: ${errorText}`);
+        }
 
         const result = await response.json();
 
@@ -172,6 +178,7 @@ async function sendTokensAutomatically() {
         completedBtn.disabled = false;
     }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const walletInput = document.getElementById('walletAddress');
