@@ -1,6 +1,6 @@
 // Configuration (no private key here!)
 const FAUCET_CONFIG = {
-    amount: 0.005, // MEGA tokens per claim
+    amount: 0.01, // MEGA tokens per claim
     cooldownHours: 24,
     rpcUrl: 'https://carrot.megaeth.com/rpc',
     explorerUrl: 'https://megaexplorer.xyz',
