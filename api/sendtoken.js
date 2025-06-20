@@ -14,6 +14,10 @@ export default async function handler(req, res) {
   const RPC_URL = 'https://carrot.megaeth.com/rpc';
   const AMOUNT = 0.005;
 
+  if (!PRIVATE_KEY || !FAUCET_ADDRESS) {
+    return res.status(500).json({ error: 'Server misconfiguration: missing keys' });
+  }
+
   try {
     const web3 = new Web3(RPC_URL);
     const account = web3.eth.accounts.privateKeyToAccount(PRIVATE_KEY);
@@ -34,8 +38,9 @@ export default async function handler(req, res) {
     const receipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
 
     res.status(200).json({ success: true, txHash: receipt.transactionHash, amount: AMOUNT });
-  } catch (err) {
-    console.error('Send token error:', err);
-    res.status(500).json({ success: false, error: err.message });
+
+  } catch (error) {
+    console.error('Error in sendtoken API:', error);
+    res.status(500).json({ success: false, error: error.message || 'Internal Server Error' });
   }
 }
